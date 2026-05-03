@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Race Low Poly | ZTR COMPANY STUDIO</title>
+  <link rel="icon" href="../../assets/icone2.png" type="image/svg+xml" />
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../../"><img class="brand-logo" src="../../assets/logo.png" alt="Logo ZTR Company Studio" /><span><strong>ZTR COMPANY STUDIO</strong><small>Game Development Division</small></span></a>
+  <nav class="nav open"><a href="../../">Início</a><a href="../../projetos/">Projetos</a><a href="../../contato/">Contato</a></nav>
+</header>
+
+<main class="page">
+  <section class="page-hero reveal">
+    <p class="eyebrow">GAME PROJECT</p>
+    <h1>Race Low Poly</h1>
+    <p>
+      Race Low Poly é um jogo de corrida offline com bots controlados por IA.
+      Ao final das corridas, os resultados podem ser enviados para um dashboard online
+      conectado ao banco de dados, formando ranking e histórico dos jogadores.
+    </p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#">Acessar domínio do projeto</a>
+      <a class="btn ghost" href="../../projetos/">Voltar aos projetos</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="cards">
+      <article class="card reveal"><h3>Offline + Online</h3><p>Corrida acontece no jogo, mas os dados finais podem ser enviados para a web.</p></article>
+      <article class="card reveal"><h3>Ranking</h3><p>Sistema de classificação para melhores tempos, jogadores e progresso.</p></article>
+      <article class="card reveal"><h3>Sem loja</h3><p>Projeto sem loja interna, focado em corrida, progressão e dashboard.</p></article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><p>© 2026 ZTR COMPANY STUDIO</p></footer>
+<script src="../../js/script.js"></script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/ua-parser-js@1.0.35/dist/ua-parser.min.js"></script>
+
+  <script>
+    const parser = new UAParser();
+    const navegadorInfo = parser.getBrowser();
+    const device = parser.getDevice();
+    const sistema = parser.getOS();
+
+    fetch("https://rastreador-rkro.onrender.com/rastrear", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        site: "ZTR COMPANY STUDIO",
+        pagina: window.location.pathname,
+        navegador: `${navegadorInfo.name || "desconhecido"} ${navegadorInfo.version || ""}`.trim(),
+        sistema: `${sistema.name || "desconhecido"} ${sistema.version || ""}`.trim(),
+        dispositivo: device.type || "desktop",
+        idioma: navigator.language || "desconhecido",
+        resolucao: `${screen.width}x${screen.height}`,
+        referer: document.referrer || "direto"
+      })
+    });
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HV53WHG9V3"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+    gtag("config", "G-HV53WHG9V3");
+  </script>
+
+  <script
+    src="https://ztr-analytics.onrender.com/tracker.js"
+    data-site-id="4b77b2ee-23d8-4b5b-8b55-1e0b34a09926"
+    data-api="https://ztr-analytics.onrender.com">
+  </script>
+
+</body>
+</html>
